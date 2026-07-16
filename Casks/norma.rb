@@ -2,17 +2,24 @@
 # (caskFrom in scripts/release-lib.ts) into out/release/<version>/norma.rb — this .tmpl is
 # the only copy committed to the repo; the rendered file is per-release build output.
 #
-# Interpolated at release time: the release version, the sha256 checksum of the release DMG,
-# and the GitHub release asset URL for that DMG. (Written in prose, not the literal slot
-# syntax below, so caskFrom's replaceAll can't mangle this comment itself.)
+# Interpolated at release time: the release version and the sha256 checksum of the release DMG.
+# The download URL is derived from the version at cask-eval time via Ruby's #{version}
+# interpolation (idiomatic cask style — keeps a real per-version sha256, passes brew audit).
+# (Slot names written in prose, not the literal syntax, so caskFrom's replaceAll can't mangle
+# this comment itself.)
 cask "norma" do
   version "0.2.001"
   sha256 "1de8cbd8d55ab3a84d3bc1e2e470b260ee1a046ebd9781386910cb91eab0f3e8"
 
-  url "https://github.com/yanlingLabs/norma/releases/download/v0.2.001/Norma-0.2.001.dmg"
+  url "https://github.com/yanlingLabs/norma/releases/download/v#{version}/Norma-#{version}.dmg"
   name "Norma"
   desc "Menu bar app for the Norma AI engine"
   homepage "https://github.com/yanlingLabs/norma"
+
+  livecheck do
+    url :url
+    strategy :github_latest
+  end
 
   auto_updates true
 
