@@ -8,8 +8,8 @@
 # (Slot names written in prose, not the literal syntax, so caskFrom's replaceAll can't mangle
 # this comment itself.)
 cask "norma" do
-  version "0.2.012"
-  sha256 "57858eccd44724218d900ceb38258b7cfcf193898b5f3a69e0e77d0cc75937d6"
+  version "0.2.014"
+  sha256 "dde9c6aefd7a55ff57abf38f8e1daa081b43712d416ae71e14f7237fffd6159c"
 
   url "https://github.com/yanlingLabs/norma/releases/download/v#{version}/Norma-#{version}.dmg"
   name "Norma"
