@@ -8,8 +8,8 @@
 # (Slot names written in prose, not the literal syntax, so caskFrom's replaceAll can't mangle
 # this comment itself.)
 cask "winter" do
-  version "0.111.0"
-  sha256 "bf0e62bb3ee26b2f32adbf52732bc5281efea423002ec95c08cb58748f0cca69"
+  version "0.111.1"
+  sha256 "01711263ab9bbcddea83d89ec9ae9e5aa7367e746839c7967fe7fba8c6373896"
 
   url "https://github.com/yanlingLabs/winter/releases/download/v#{version}/Winter-#{version}.dmg"
   name "Winter"
